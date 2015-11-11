@@ -1,5 +1,5 @@
 # prefer preinstalled RapidXML...
-find_package(RapidXML)
+find_package(RapidXML QUIET)
 
 if(RAPIDXML_FOUND)
     #...but check for known upstream bugs:
@@ -30,7 +30,7 @@ if(NOT RAPIDXML_FOUND)
 endif()
 
 # prefer preinstalled CImg:
-find_package(CImg)
+find_package(CImg QUIET)
 if(NOT CIMG_FOUND)
     message(STATUS "CImg not found - using internal version.")
     set(CImg_INCLUDE_DIR "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/3rd_party/CImg-1.5.6/>" CACHE PATH "Include directory for CImg" FORCE)
